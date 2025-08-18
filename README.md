@@ -5,7 +5,7 @@
 Welcome to my GitHub profile! I'm a passionate software engineer with expertise in building scalable applications and solving complex problems.
 
 ### 🌐 Portfolio Website
-Check out my interactive portfolio: **[arkadevbanerjee.github.io](https://arkadevbanerjee.github.io)**
+Check out my interactive portfolio: **[arkadevbanerjee.github.io](https://arkadevbanerjee.github.io/arkadevbanerjee)**
 
 ---
 
@@ -76,8 +76,8 @@ Check out my interactive portfolio: **[arkadevbanerjee.github.io](https://arkade
 
 Feel free to reach out for collaborations or just a friendly hello!
 
-📧 **Email:** [arkadev.banerjee@example.com](mailto:arkadev.banerjee@example.com)
-🌐 **Portfolio:** [arkadevbanerjee.github.io](https://arkadevbanerjee.github.io)
+📧 **Email:** [arkadev220701@gmail.com](mailto:arkadev220701@gmail.com)
+🌐 **Portfolio:** [arkadevbanerjee.github.io](https://arkadevbanerjee.github.io/arkadevbanerjee)
 
 ---
 
