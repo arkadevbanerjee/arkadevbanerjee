@@ -5,7 +5,8 @@
 Welcome to my GitHub profile! I'm a passionate software engineer with expertise in building scalable applications and solving complex problems.
 
 ### 🌐 Portfolio Website
-Check out my interactive portfolio: **[arkadevbanerjee.github.io](https://arkadevbanerjee.github.io)**
+
+Check out my interactive portfolio: **[arkadevbanerjee.github.io/arkadevbanerjee](https://arkadevbanerjee.github.io/arkadevbanerjee)**
 
 ---
 
@@ -39,6 +40,7 @@ Check out my interactive portfolio: **[arkadevbanerjee.github.io](https://arkade
 ## 💼 Professional Experience
 
 - **SDE-II at CityMall** (Oct 2023 - Present)
+
   - Building scalable product catalogue management systems
   - Developing data scraping solutions for analytics
   - Improving system performance and reliability
@@ -66,17 +68,21 @@ Check out my interactive portfolio: **[arkadevbanerjee.github.io](https://arkade
 
 ---
 
+<<<<<<< HEAD
+
 ## 📦 Setup & Deployment
 
 ### Local Development
 
 1. Clone this repository:
+
 ```bash
 git clone https://github.com/arkadevbanerjee/arkadevbanerjee.git
 cd arkadevbanerjee
 ```
 
 2. Open `index.html` in your browser or use a local server:
+
 ```bash
 # Using Python 3
 python -m http.server 8000
@@ -93,11 +99,13 @@ php -S localhost:8000
 This is a special **username repository** that automatically deploys to GitHub Pages:
 
 1. **Repository Setup:**
+
    - Repository name: `arkadevbanerjee` (same as username)
    - This creates a profile repository that appears on your GitHub profile
    - Automatically deploys to: `https://arkadevbanerjee.github.io`
 
 2. **Deploy Changes:**
+
    ```bash
    git add .
    git commit -m "Update portfolio"
@@ -124,14 +132,14 @@ arkadevbanerjee/
 
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/arkadevbanerjee)
 [![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/arkadevbanerjee)
-[![Portfolio](https://img.shields.io/badge/-Portfolio-FF5722?style=flat-square&logo=google-chrome&logoColor=white)](https://arkadevbanerjee.github.io)
+[![Portfolio](https://img.shields.io/badge/-Portfolio-FF5722?style=flat-square&logo=google-chrome&logoColor=white)](https://arkadevbanerjee.github.io/arkadevbanerjee)
 
 ## 📧 Contact
 
 Feel free to reach out for collaborations or just a friendly hello!
 
-📧 **Email:** [arkadev.banerjee@example.com](mailto:arkadev.banerjee@example.com)
-🌐 **Portfolio:** [arkadevbanerjee.github.io](https://arkadevbanerjee.github.io)
+📧 **Email:** [arkadev220701@gmail.com](mailto:arkadev220701@gmail.com)
+🌐 **Portfolio:** [arkadevbanerjee.github.io/arkadevbanerjee](https://arkadevbanerjee.github.io/arkadevbanerjee)
 
 ---
 
