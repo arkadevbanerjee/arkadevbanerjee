@@ -1,8 +1,55 @@
-# Arkadev Banerjee - Portfolio Website
+# Hi there, I'm Arkadev Banerjee! 👋
 
-A modern, responsive portfolio website showcasing my professional experience, skills, and projects.
+## 🚀 Software Engineer | Full-Stack Developer | Problem Solver
 
-## 🌟 Features
+Welcome to my GitHub profile! I'm a passionate software engineer with expertise in building scalable applications and solving complex problems.
+
+### 🌐 Portfolio Website
+Check out my interactive portfolio: **[arkadevbanerjee.github.io](https://arkadevbanerjee.github.io)**
+
+---
+
+## 🛠️ Tech Stack
+
+**Languages:**
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Java](https://img.shields.io/badge/-Java-007396?style=flat-square&logo=java&logoColor=white)
+![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+
+**Frontend:**
+![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Vue.js](https://img.shields.io/badge/-Vue.js-4FC08D?style=flat-square&logo=vue.js&logoColor=white)
+![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+
+**Backend:**
+![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/-Express-000000?style=flat-square&logo=express&logoColor=white)
+![Django](https://img.shields.io/badge/-Django-092E20?style=flat-square&logo=django&logoColor=white)
+
+**Databases & Cloud:**
+![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white)
+![AWS](https://img.shields.io/badge/-AWS-232F3E?style=flat-square&logo=amazon-aws&logoColor=white)
+![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+
+---
+
+## 💼 Professional Experience
+
+- **SDE-II at CityMall** (Oct 2023 - Present)
+  - Building scalable product catalogue management systems
+  - Developing data scraping solutions for analytics
+  - Improving system performance and reliability
+
+- **SDE-I at CityMall** (Dec 2021 - Oct 2023)
+  - Developed distributed product store architecture
+  - Enhanced problem-solving capabilities and technical expertise
+
+---
+
+## 🌟 Portfolio Features
 
 - **Responsive Design** - Works seamlessly on all devices
 - **Dark/Light Mode** - Toggle between themes
@@ -11,36 +58,22 @@ A modern, responsive portfolio website showcasing my professional experience, sk
 - **Modern UI/UX** - Clean, professional design
 - **Fast Loading** - Optimized for performance
 
-## 🛠️ Technologies Used
+## 📈 GitHub Stats
 
-- **HTML5** - Semantic markup
-- **CSS3** - Modern styling with CSS Grid & Flexbox
-- **JavaScript** - Interactive functionality
-- **AOS Library** - Scroll animations
-- **Font Awesome** - Icons
-- **Google Fonts** - Typography
+![Arkadev's GitHub stats](https://github-readme-stats.vercel.app/api?username=arkadevbanerjee&show_icons=true&theme=dark&hide_border=true)
 
-## 📱 Sections
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=arkadevbanerjee&layout=compact&theme=dark&hide_border=true)
 
-- **Hero** - Introduction with typing animation
-- **About** - Professional summary and stats
-- **Experience** - Work history and achievements
-- **Skills** - Technical skills with progress bars
-- **Projects** - Portfolio of work
-- **Contact** - Get in touch form
-
-## 🚀 Live Demo
-
-Visit the live site: [https://yourusername.github.io/portfolio](https://yourusername.github.io/portfolio)
+---
 
 ## 📦 Setup & Deployment
 
 ### Local Development
 
-1. Clone the repository:
+1. Clone this repository:
 ```bash
-git clone https://github.com/yourusername/portfolio.git
-cd portfolio
+git clone https://github.com/arkadevbanerjee/arkadevbanerjee.git
+cd arkadevbanerjee
 ```
 
 2. Open `index.html` in your browser or use a local server:
@@ -57,79 +90,49 @@ php -S localhost:8000
 
 ### GitHub Pages Deployment
 
-1. **Create a GitHub Repository:**
-   - Go to [GitHub](https://github.com) and create a new repository
-   - Name it `portfolio` or any name you prefer
-   - Make it public
+This is a special **username repository** that automatically deploys to GitHub Pages:
 
-2. **Upload Your Files:**
+1. **Repository Setup:**
+   - Repository name: `arkadevbanerjee` (same as username)
+   - This creates a profile repository that appears on your GitHub profile
+   - Automatically deploys to: `https://arkadevbanerjee.github.io`
+
+2. **Deploy Changes:**
    ```bash
-   git init
    git add .
-   git commit -m "Initial portfolio commit"
-   git branch -M main
-   git remote add origin https://github.com/yourusername/portfolio.git
-   git push -u origin main
+   git commit -m "Update portfolio"
+   git push origin main
    ```
 
-3. **Enable GitHub Pages:**
-   - Go to your repository on GitHub
-   - Click on **Settings** tab
-   - Scroll down to **Pages** section
-   - Under **Source**, select **Deploy from a branch**
-   - Choose **main** branch and **/ (root)** folder
-   - Click **Save**
-
-4. **Access Your Site:**
-   - Your site will be available at: `https://yourusername.github.io/portfolio`
-   - It may take a few minutes to deploy initially
-
-## 🔧 Customization
-
-### Personal Information
-- Update contact details in `index.html`
-- Replace placeholder text with your information
-- Add your actual project links and descriptions
-
-### Styling
-- Modify CSS variables in `styles.css` for color schemes
-- Adjust animations and transitions as needed
-- Update responsive breakpoints if required
-
-### Content
-- Replace `Profile.pdf` with your actual resume
-- Update social media links
-- Modify the experience and skills sections
+3. **Access Your Site:**
+   - Live site: `https://arkadevbanerjee.github.io`
+   - Updates are automatically deployed when you push to main branch
 
 ## 📄 File Structure
 
 ```
-portfolio/
-├── index.html          # Main HTML file
+arkadevbanerjee/
+├── index.html          # Main portfolio page
 ├── styles.css          # All CSS styles
 ├── script.js           # JavaScript functionality
 ├── Profile.pdf         # Resume/CV file
-└── README.md           # This file
+├── README.md           # GitHub profile README
+└── .gitignore          # Git ignore file
 ```
 
-## 🤝 Contributing
+## 🤝 Let's Connect!
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/arkadevbanerjee)
+[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/arkadevbanerjee)
+[![Portfolio](https://img.shields.io/badge/-Portfolio-FF5722?style=flat-square&logo=google-chrome&logoColor=white)](https://arkadevbanerjee.github.io)
 
 ## 📧 Contact
 
-Arkadev Banerjee - [your-email@example.com](mailto:your-email@example.com)
+Feel free to reach out for collaborations or just a friendly hello!
 
-Project Link: [https://github.com/yourusername/portfolio](https://github.com/yourusername/portfolio)
+📧 **Email:** [arkadev.banerjee@example.com](mailto:arkadev.banerjee@example.com)
+🌐 **Portfolio:** [arkadevbanerjee.github.io](https://arkadevbanerjee.github.io)
 
 ---
 
-⭐ If you found this portfolio helpful, please give it a star on GitHub!
+⭐ **Thanks for visiting!** If you like what you see, feel free to ⭐ star this repository!
