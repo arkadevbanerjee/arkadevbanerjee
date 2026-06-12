@@ -18,6 +18,9 @@ Thumbs.db
 # Node modules (if you add any build tools later)
 node_modules/
 
+# Local Claude Code settings
+.claude/
+
 # Environment variables
 .env
 .env.local

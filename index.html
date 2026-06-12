@@ -1,501 +1,277 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arkadev Banerjee - SDE-2</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.svg" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon.svg" />
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-    />
-  </head>
-  <body>
-    <!-- Loading Screen -->
-    <div id="loading-screen">
-      <div class="loader">
-        <div class="loader-text">Loading...</div>
-        <div class="loader-bar"></div>
-      </div>
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arkadev Banerjee — Distributed Systems Engineer</title>
+  <meta name="description" content="Arkadev Banerjee — distributed-systems engineer at CityMall. Orders, catalogues, capacity, caches — and the AI agents that run on top. Kolkata, India." />
+  <meta name="theme-color" content="#06080f" />
+  <meta property="og:title" content="Arkadev Banerjee — Distributed Systems Engineer" />
+  <meta property="og:description" content="I build the invisible systems that move commerce. SDE-II @ CityMall · Kolkata, India." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://arkadevbanerjee.github.io/arkadevbanerjee/" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <noscript>
+    <style>
+      /* without JS the journey unrolls as plain stacked sections */
+      .journey-track { height: auto !important; }
+      .journey-stage { position: static !important; height: auto !important; display: block !important; overflow: visible !important; padding: 4rem 0; }
+      .stage-head { position: static !important; margin-bottom: 3rem; }
+      .chapter { opacity: 1 !important; visibility: visible !important; margin: 0 0 4rem; }
+      #scene { display: none; }
+    </style>
+  </noscript>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Dark Mode Toggle -->
-    <div class="theme-toggle">
-      <i class="fas fa-moon"></i>
-    </div>
-    <header class="header-fixed">
-      <nav>
-        <div class="container">
-          <div class="logo" data-aos="fade-right">Arkadev Banerjee</div>
-          <ul class="nav-links" data-aos="fade-left">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-          <div class="hamburger">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-          </div>
-        </div>
-      </nav>
-    </header>
+  <!-- 3D constellation lives here; pure decoration -->
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <!-- CSS-only backdrop used when 3D is unavailable / reduced motion -->
+  <div class="bg-fallback" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="node-tip" id="node-tip" aria-hidden="true"></div>
 
-    <section id="home" class="hero">
-      <div class="particles-bg"></div>
-      <div class="container">
-        <div class="hero-content">
-          <div class="hero-text" data-aos="fade-up" data-aos-delay="300">
-            <h1>
-              Hi, I'm
-              <span class="highlight typing-text">Arkadev Banerjee</span>
-            </h1>
-            <h2 class="role-text" data-aos="fade-up" data-aos-delay="600">
-              SDE-2 @ CityMall
-            </h2>
-            <p class="hero-description" data-aos="fade-up" data-aos-delay="900">
-              I build scalable distributed systems and innovative solutions
-            </p>
-            <div class="hero-stats" data-aos="fade-up" data-aos-delay="1200">
-              <div class="stat">
-                <span class="stat-number" data-count="3">0</span>
-                <span class="stat-label">Years Experience</span>
-              </div>
-              <div class="stat">
-                <span class="stat-number" data-count="15">0</span>
-                <span class="stat-label">Projects Completed</span>
-              </div>
-              <div class="stat">
-                <span class="stat-number" data-count="5">0</span>
-                <span class="stat-label">Technologies</span>
-              </div>
-            </div>
-            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="1500">
-              <a href="#contact" class="cta-button primary">Get In Touch</a>
-              <a href="#projects" class="cta-button secondary">View Work</a>
-            </div>
-          </div>
-        </div>
+  <header class="site-head">
+    <a class="brand" href="#top" aria-label="Arkadev Banerjee — home">
+      <span class="brand-mark">AB</span><span class="brand-dot">●</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#journey">Journey</a>
+      <a href="#registry">Systems</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-ghost head-resume" href="Profile.pdf" target="_blank" rel="noopener">Résumé</a>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <p class="micro hero-id">
+        <span class="status-dot" aria-hidden="true"></span>
+        ARKADEV&nbsp;BANERJEE&nbsp;&nbsp;//&nbsp;&nbsp;SDE-II&nbsp;@&nbsp;CITYMALL&nbsp;&nbsp;//&nbsp;&nbsp;KOLKATA,&nbsp;IN
+      </p>
+      <h1 class="hero-title">
+        <span class="line">I build the</span>
+        <span class="line"><em class="outline">invisible</em> systems</span>
+        <span class="line">that move commerce.</span>
+      </h1>
+      <p class="hero-sub">
+        Distributed-systems engineer. Four years deep in the machinery of Indian
+        e-commerce — orders, catalogues, capacity, caches — and now the AI agents
+        that run on top of it all.
+      </p>
+      <div class="hero-stats micro" role="list">
+        <span role="listitem"><b>UPTIME</b> 4.5 yrs</span>
+        <span role="listitem"><b>SERVICES</b> 15+</span>
+        <span role="listitem"><b>TEAMS</b> 5</span>
+        <span role="listitem"><b>REGION</b> ap-south-1</span>
       </div>
-      <div class="scroll-indicator">
-        <div class="scroll-arrow"></div>
-      </div>
+      <p class="hero-hint micro" aria-hidden="true">▼ scroll to enter the system</p>
     </section>
 
-    <section id="about" class="about">
-      <div class="container">
-        <h2 class="section-title" data-aos="fade-up">About Me</h2>
-        <div class="about-content">
-          <div class="about-image" data-aos="fade-right">
-            <div class="profile-card">
-              <div class="profile-img">
-                <div class="profile-placeholder">
-                  <i class="fas fa-user"></i>
-                </div>
-              </div>
-              <div class="profile-info">
-                <h3>Arkadev Banerjee</h3>
-                <p>Software Development Engineer</p>
-                <div class="profile-badges">
-                  <span class="badge">AWS Certified</span>
-                  <span class="badge">Java Certified</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="about-text" data-aos="fade-left">
-            <p>
-              Hello! I'm Arkadev Banerjee, a passionate SDE-2 at CityMall with
-              3+ years of experience building distributed and scalable systems.
-              I specialize in backend development, cloud applications, and
-              product catalogue management.
+    <!-- ============ JOURNEY ============ -->
+    <section class="journey" id="journey" aria-label="Career journey">
+      <div class="journey-track">
+        <div class="journey-stage">
+          <header class="stage-head">
+            <p class="micro kicker">/01 — FLIGHT PATH</p>
+            <p class="micro stage-counter" aria-hidden="true"><span id="ch-now">01</span> / 05</p>
+          </header>
+
+          <article class="chapter" data-chapter="0" data-hue="ingress">
+            <p class="micro ch-label">CH/01 · INGRESS · DEC 2021</p>
+            <h2 class="ch-title">Scrape the market</h2>
+            <p class="ch-body">
+              Fresh out of college, straight into production. I started where data
+              enters the system — building web scrapers for price benchmarking across
+              the Indian market, feeding the engines behind dynamic pricing and
+              marketing strategy.
             </p>
-            <p>
-              With a BTech in Computer Science from Bengal Institute of
-              Technology and hands-on experience across multiple companies, I
-              excel at solving complex problems and implementing innovative
-              solutions using modern technologies.
+            <p class="micro ch-stack">PYTHON · NODE.JS · SCRAPING&nbsp;AT&nbsp;SCALE</p>
+          </article>
+
+          <article class="chapter" data-chapter="1" data-hue="catalogue">
+            <p class="micro ch-label">CH/02 · CATALOGUE</p>
+            <h2 class="ch-title">A store for every product</h2>
+            <p class="ch-body">
+              Then I went deeper: the product store. I helped build a distributed
+              catalogue system flexible enough to absorb constant change — new
+              products, new attributes, new sellers — without ever stopping the machine.
             </p>
-            <div class="about-highlights">
-              <div class="highlight-item">
-                <i class="fas fa-graduation-cap"></i>
-                <div>
-                  <h4>Education</h4>
-                  <p>
-                    BTech in Computer Science<br />Bengal Institute of
-                    Technology
-                  </p>
-                </div>
-              </div>
-              <div class="highlight-item">
-                <i class="fas fa-briefcase"></i>
-                <div>
-                  <h4>Current Role</h4>
-                  <p>SDE-2 at CityMall<br />Platform Team Member</p>
-                </div>
-              </div>
-              <div class="highlight-item">
-                <i class="fas fa-code"></i>
-                <div>
-                  <h4>Specialization</h4>
-                  <p>Distributed Systems<br />Cloud Architecture</p>
-                </div>
-              </div>
-            </div>
-            <div class="social-links">
-              <a
-                href="https://github.com/arkadevbanerjee"
-                target="_blank"
-                data-aos="zoom-in"
-                data-aos-delay="100"
-                ><i class="fab fa-github"></i
-              ></a>
-              <a
-                href="https://www.linkedin.com/in/arkadevbanerjee"
-                target="_blank"
-                data-aos="zoom-in"
-                data-aos-delay="200"
-                ><i class="fab fa-linkedin"></i
-              ></a>
-              <a
-                href="mailto:arkadev220701@gmail.com"
-                target="_blank"
-                data-aos="zoom-in"
-                data-aos-delay="300"
-                ><i class="fas fa-envelope"></i
-              ></a>
-            </div>
-          </div>
+            <p class="micro ch-stack">NODE.JS · POSTGRESQL · MONGODB</p>
+          </article>
+
+          <article class="chapter" data-chapter="2" data-hue="platform">
+            <p class="micro ch-label">CH/03 · PLATFORM</p>
+            <h2 class="ch-title">Rewrite the order machine</h2>
+            <p class="ch-body">
+              On the platform team I owned shared systems and internal tooling — and a
+              complete, ground-up rewrite of the order service: the pipeline every
+              single order flows through. You don't get to pause commerce while you
+              replace its heart.
+            </p>
+            <p class="micro ch-stack">NODE.JS · KAFKA · REDIS · POSTGRES</p>
+          </article>
+
+          <article class="chapter" data-chapter="3" data-hue="inference">
+            <p class="micro ch-label">CH/04 · INFERENCE</p>
+            <h2 class="ch-title">Teach the system taste</h2>
+            <p class="ch-body">
+              With the data-science team I worked on ML-based recommendation systems —
+              squeezing storage, accelerating data access, and turning behavioural
+              signals into suggestions people actually wanted.
+            </p>
+            <p class="micro ch-stack">PYTHON · ML · STORAGE&nbsp;EFFICIENCY</p>
+          </article>
+
+          <article class="chapter" data-chapter="4" data-hue="ops">
+            <p class="micro ch-label">CH/05 · OPERATIONS · SDE-II SINCE OCT 2023</p>
+            <h2 class="ch-title">Move atoms, not just bits</h2>
+            <p class="ch-body">
+              Software is easy; trucks are hard. Today I optimize warehouse and
+              logistics capacity — and build the atomic guardrails (Redis&nbsp;+&nbsp;Lua)
+              that keep distributed checkout honest under peak festival load.
+            </p>
+            <p class="micro ch-stack">GO · REDIS · LUA · CAPACITY&nbsp;PLANNING</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Professional Experience Section -->
-    <section id="experience" class="experience">
-      <div class="container">
-        <h2 class="section-title" data-aos="fade-up">
-          Professional Experience
-        </h2>
-        <div class="experience-grid">
-          <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="experience-icon">💼</div>
-            <div class="experience-header">
-              <div class="experience-role">
-                <h3>SDE-II</h3>
-                <h4>CityMall • Gurugram, India</h4>
-              </div>
-              <div class="experience-date">Oct 2023 - Present</div>
-            </div>
-            <p class="experience-description">
-              Platform Team Member focusing on cloud application development and
-              distributed systems architecture.
-            </p>
-            <ul class="experience-achievements">
-              <li>Built scalable product catalogue management system</li>
-              <li>Developed data scraping solutions for analytics team</li>
-              <li>Improved system performance and reliability</li>
-            </ul>
-          </div>
+    <!-- ============ SERVICE REGISTRY ============ -->
+    <section class="registry section" id="registry">
+      <header class="section-head">
+        <p class="micro kicker">/02 — SERVICE REGISTRY</p>
+        <h2 class="section-title">Systems I've shipped<span class="accent">.</span></h2>
+        <p class="section-sub">CityMall work described from orbit — the interesting details live in production.</p>
+      </header>
 
-          <div class="experience-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="experience-icon">🚀</div>
-            <div class="experience-header">
-              <div class="experience-role">
-                <h3>SDE-I</h3>
-                <h4>CityMall • Gurugram, India</h4>
-              </div>
-              <div class="experience-date">Dec 2021 - Oct 2023</div>
-            </div>
-            <p class="experience-description">
-              Developed distributed and scalable product store managing
-              comprehensive product catalogue.
-            </p>
-            <ul class="experience-achievements">
-              <li>Enhanced problem-solving skills and technical expertise</li>
-              <li>Contributed to marketing and analytics projects</li>
-              <li>Expanded technology stack knowledge</li>
-            </ul>
-          </div>
+      <div class="cards">
+        <article class="card" data-hue="platform">
+          <div class="card-top micro"><span class="svc-name">order-service/v2</span><span class="svc-status"><i></i>LIVE · CORE</span></div>
+          <p class="card-body">Ground-up rewrite of the pipeline every order flows through — resilient, observable, and built to be replaced without downtime.</p>
+          <p class="micro card-stack">NODE.JS · KAFKA · POSTGRES</p>
+        </article>
+        <article class="card" data-hue="ops">
+          <div class="card-top micro"><span class="svc-name">atomic-caps</span><span class="svc-status"><i></i>LIVE · CORE</span></div>
+          <p class="card-body">Race-free promotional caps for distributed checkout. Redis + Lua — atomic where it matters, because money doesn't forgive race conditions.</p>
+          <p class="micro card-stack">REDIS · LUA</p>
+        </article>
+        <article class="card" data-hue="catalogue">
+          <div class="card-top micro"><span class="svc-name">product-store</span><span class="svc-status"><i></i>LIVE · CORE</span></div>
+          <p class="card-body">The distributed catalogue behind search and discovery — schema-flexible, write-heavy, and always on.</p>
+          <p class="micro card-stack">NODE.JS · POSTGRESQL · MONGODB</p>
+        </article>
+        <article class="card" data-hue="ingress">
+          <div class="card-top micro"><span class="svc-name">capacity-engine</span><span class="svc-status"><i></i>LIVE · CORE</span></div>
+          <p class="card-body">Warehouse &amp; logistics capacity planning — deciding what the network can promise, and when it can deliver.</p>
+          <p class="micro card-stack">GO · POSTGRESQL</p>
+        </article>
+        <article class="card" data-hue="inference">
+          <div class="card-top micro"><span class="svc-name">slack-agent</span><span class="svc-status"><i></i>LIVE · LAB</span></div>
+          <p class="card-body">A personal AI chief-of-staff living in Slack — approval-bus architecture, human-in-the-loop by design, and $0 when idle.</p>
+          <p class="micro card-stack">TYPESCRIPT · LLM&nbsp;AGENTS</p>
+        </article>
+        <article class="card" data-hue="ops">
+          <div class="card-top micro"><span class="svc-name">finops-extract</span><span class="svc-status"><i></i>LIVE · LAB</span></div>
+          <p class="card-body">An LLM-powered pipeline that turns messy cloud invoices into clean, queryable cost analytics.</p>
+          <p class="micro card-stack">PYTHON · LLMS</p>
+        </article>
+      </div>
 
-          <div class="experience-card" data-aos="fade-up" data-aos-delay="300">
-            <div class="experience-icon">📚</div>
-            <div class="experience-header">
-              <div class="experience-role">
-                <h3>Project Author</h3>
-                <h4>Stepik • Prague, Czechia</h4>
-              </div>
-              <div class="experience-date">Jul 2021 - Dec 2021</div>
-            </div>
-            <p class="experience-description">
-              Created innovative educational projects including Graph Algorithm
-              Visualizer.
-            </p>
-            <ul class="experience-achievements">
-              <li>Developed interactive learning tools</li>
-              <li>Built Hyper Collections project</li>
-              <li>Focused on algorithm visualization</li>
-            </ul>
-          </div>
-
-          <div class="experience-card" data-aos="fade-up" data-aos-delay="400">
-            <div class="experience-icon">⚡</div>
-            <div class="experience-header">
-              <div class="experience-role">
-                <h3>Software Engineer Intern</h3>
-                <h4>Manastik • Pune, India</h4>
-              </div>
-              <div class="experience-date">Sep 2021 - Nov 2021</div>
-            </div>
-            <p class="experience-description">
-              Implemented business logic and contributed to ML projects with
-              modern tech stack.
-            </p>
-            <ul class="experience-achievements">
-              <li>Developed video streaming capabilities</li>
-              <li>Built WebSocket servers</li>
-              <li>Worked on Neurorehabilitation ML project</li>
-            </ul>
-          </div>
-        </div>
+      <div class="archive">
+        <p class="micro kicker">— ARCHIVE / EARLIER BUILDS</p>
+        <ul class="archive-list">
+          <li><span class="svc-name">kharcha</span><span class="arch-desc">Android expense tracker, native Kotlin</span></li>
+          <li><span class="svc-name">graph-visualizer</span><span class="arch-desc">Graph-algorithm visualizer, authored as a JetBrains Academy (Stepik) project for learners worldwide</span></li>
+          <li><span class="svc-name">teleneuro-backend</span><span class="arch-desc">WebSocket + video-streaming backend for a teleneurology platform (Manastik)</span></li>
+          <li><span class="svc-name">chain-registry</span><span class="arch-desc">Blockchain-backed crime registration — Top-20 in India (SRIIH), Manthan 2021 grand finale</span></li>
+        </ul>
       </div>
     </section>
 
-    <section id="skills" class="skills">
-      <div class="container">
-        <h2 class="section-title">Skills</h2>
-        <div class="skills-container">
-          <div class="skills-grid">
-            <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
-              <div class="category-header">
-                <i class="fas fa-server"></i>
-                <h3>Backend Development</h3>
-              </div>
-              <div class="skill-items">
-                <div class="skill-item">
-                  <span class="skill-name">Node.js</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" data-width="90"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-name">Python</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" data-width="85"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-name">Golang</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" data-width="80"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-name">Java</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" data-width="75"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
-              <div class="category-header">
-                <i class="fas fa-cloud"></i>
-                <h3>Cloud & Infrastructure</h3>
-              </div>
-              <div class="skill-items">
-                <div class="skill-item">
-                  <span class="skill-name">AWS</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" data-width="85"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-name">Distributed Systems</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" data-width="90"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-name">Docker</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" data-width="80"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-name">WebSocket Servers</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" data-width="85"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
-              <div class="category-header">
-                <i class="fas fa-tools"></i>
-                <h3>Technologies & Tools</h3>
-              </div>
-              <div class="skill-items">
-                <div class="skill-item">
-                  <span class="skill-name">Data Analytics</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" data-width="85"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-name">Machine Learning</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" data-width="75"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-name">Video Streaming</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" data-width="80"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-name">Algorithm Visualization</span>
-                  <div class="skill-bar">
-                    <div class="skill-progress" data-width="90"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <!-- ============ SYSTEM MANIFEST (skills) ============ -->
+    <section class="manifest section" id="manifest">
+      <header class="section-head">
+        <p class="micro kicker">/03 — SYSTEM MANIFEST</p>
+        <h2 class="section-title">Node types in this constellation<span class="accent">.</span></h2>
+      </header>
+      <dl class="manifest-grid">
+        <div class="manifest-group" data-hue="ingress">
+          <dt class="micro"><i class="node-dot"></i>LANGUAGES</dt>
+          <dd>TypeScript / Node.js · Go · Python · Java · Rust · C</dd>
         </div>
-      </div>
+        <div class="manifest-group" data-hue="catalogue">
+          <dt class="micro"><i class="node-dot"></i>DATASTORES</dt>
+          <dd>PostgreSQL · Redis · MongoDB · DynamoDB</dd>
+        </div>
+        <div class="manifest-group" data-hue="platform">
+          <dt class="micro"><i class="node-dot"></i>STREAMS &amp; INFRA</dt>
+          <dd>Kafka · Docker · AWS · microservice architecture</dd>
+        </div>
+        <div class="manifest-group" data-hue="inference">
+          <dt class="micro"><i class="node-dot"></i>PRACTICE</dt>
+          <dd>Distributed systems · caching · capacity planning · production debugging</dd>
+        </div>
+        <div class="manifest-group" data-hue="ops">
+          <dt class="micro"><i class="node-dot"></i>AI&nbsp;ERA</dt>
+          <dd>LLM agents · AI-assisted engineering · human-in-the-loop tooling</dd>
+        </div>
+      </dl>
     </section>
 
-    <section id="projects" class="projects">
-      <div class="container">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-image"></div>
-            <h3>CityMall Product Catalogue</h3>
-            <p>
-              Distributed and scalable product store managing comprehensive
-              product catalogue with advanced scraping capabilities for
-              analytics and marketing teams.
-            </p>
-            <div class="project-links">
-              <a href="#" target="_blank">View Project</a>
-              <a href="#" target="_blank">GitHub</a>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="project-image"></div>
-            <h3>Graph Algorithm Visualizer</h3>
-            <p>
-              Interactive visualization tool for graph algorithms built during
-              Stepik project authorship, helping users understand complex
-              algorithmic concepts.
-            </p>
-            <div class="project-links">
-              <a href="#" target="_blank">View Project</a>
-              <a href="#" target="_blank">GitHub</a>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="project-image"></div>
-            <h3>Neurorehabilitation ML Platform</h3>
-            <p>
-              Machine learning project for neurorehabilitation with video
-              streaming capabilities and WebSocket servers. Built using NodeJS,
-              AWS, and Python.
-            </p>
-            <div class="project-links">
-              <a href="#" target="_blank">View Project</a>
-              <a href="#" target="_blank">GitHub</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-content">
-          <div class="contact-info">
-            <h3>Let's work together</h3>
-            <p>
-              I'm currently looking for new opportunities. Whether you have a
-              question or just want to say hi, I'll get back to you as soon as
-              possible!
-            </p>
-            <div class="contact-details">
-              <p><i class="fas fa-envelope"></i> arkadev220701@gmail.com</p>
-              <p><i class="fas fa-phone"></i> Available on request</p>
-              <p>
-                <i class="fas fa-map-marker-alt"></i> Kolkata, West Bengal,
-                India
-              </p>
-            </div>
-          </div>
-          <form id="contact-form" class="contact-form">
-            <div class="form-group">
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Your Name"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Your Email"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                placeholder="Subject"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Your Message"
-                required
-              ></textarea>
-            </div>
-            <button type="submit" class="submit-button">Send Message</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="container">
+    <!-- ============ ABOUT ============ -->
+    <section class="about section" id="about">
+      <header class="section-head">
+        <p class="micro kicker">/04 — THE HUMAN IN THE LOOP</p>
+        <h2 class="section-title">Hello, I'm Arka<span class="accent">.</span></h2>
+      </header>
+      <div class="about-cols">
         <p>
-          &copy; <span id="current-year"></span> Arkadev Banerjee. All rights
-          reserved.
+          I'm a backend engineer in Kolkata who likes systems with consequences:
+          orders, money, trucks, time. Four-plus years at CityMall took me through
+          five teams — from scraping market data to running operations infrastructure —
+          and left me with a conviction that <b>reliability is a feature users feel</b>.
+        </p>
+        <p>
+          These days I'm equally obsessed with the AI layer: building agents that do
+          real work under human approval, and tooling that makes knowledge compound
+          instead of evaporate.
+        </p>
+        <p class="micro about-edu">
+          B.TECH, COMPUTER SCIENCE — BENGAL INSTITUTE OF TECHNOLOGY (2019–2023) · CGPA 9.4
         </p>
       </div>
-    </footer>
+    </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="script.js"></script>
-  </body>
+    <!-- ============ CONTACT ============ -->
+    <section class="contact section" id="contact">
+      <header class="section-head">
+        <p class="micro kicker">/05 — OPEN A CONNECTION</p>
+        <h2 class="section-title contact-title">Let's build something<br />that doesn't fall over<span class="accent">.</span></h2>
+      </header>
+      <div class="contact-actions">
+        <a class="btn btn-solid" href="mailto:arkadev220701@gmail.com">arkadev220701@gmail.com</a>
+        <a class="btn btn-ghost" href="https://github.com/arkadevbanerjee" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/arkadevbanerjee" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-ghost" href="Profile.pdf" target="_blank" rel="noopener">Résumé&nbsp;↓</a>
+      </div>
+      <footer class="site-foot micro">
+        <span>© 2026 ARKADEV BANERJEE — DESIGNED &amp; ENGINEERED IN KOLKATA</span>
+        <span>THREE.JS · GSAP · TOO MANY PACKETS</span>
+      </footer>
+    </section>
+  </main>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
 </html>

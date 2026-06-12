@@ -1,0 +1,31 @@
+:root {
+  /* the void */
+  --bg: #06080f;
+  --bg-raise: #0b0f1a;
+  --ink: #e9edf5;
+  --ink-body: #c2c9d8;
+  --ink-dim: #8d96ab;
+  --hairline: rgba(160, 175, 205, 0.14);
+
+  /* cluster hues — must match src/content/data.ts */
+  --hue-ingress: #38e1ff;
+  --hue-catalogue: #a78bfa;
+  --hue-platform: #ffc14d;
+  --hue-inference: #3ee6a0;
+  --hue-ops: #ff6ec7;
+
+  --accent: var(--hue-ingress);
+
+  --font-display: 'Cabinet Grotesk', 'Avenir Next', sans-serif;
+  --font-body: 'Satoshi', 'Helvetica Neue', sans-serif;
+  --font-mono: 'Martian Mono', 'SF Mono', monospace;
+
+  --space: clamp(1.25rem, 4vw, 4rem);
+  --head-h: 64px;
+}
+
+[data-hue='ingress'] { --hue: var(--hue-ingress); }
+[data-hue='catalogue'] { --hue: var(--hue-catalogue); }
+[data-hue='platform'] { --hue: var(--hue-platform); }
+[data-hue='inference'] { --hue: var(--hue-inference); }
+[data-hue='ops'] { --hue: var(--hue-ops); }
