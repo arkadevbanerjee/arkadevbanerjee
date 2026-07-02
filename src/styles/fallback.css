@@ -1,5 +1,5 @@
 /* CSS-only backdrop for when WebGL is unavailable, the GPU is weak,
-   or the user prefers reduced motion. */
+   or the user prefers reduced motion. Warm sodium-lamp night. */
 .bg-fallback { display: none; }
 
 html.no-3d .bg-fallback {
@@ -8,13 +8,13 @@ html.no-3d .bg-fallback {
   inset: 0;
   z-index: 0;
   background:
-    radial-gradient(ellipse 50% 38% at 18% 22%, rgba(56, 225, 255, 0.10), transparent 70%),
-    radial-gradient(ellipse 44% 36% at 82% 30%, rgba(167, 139, 250, 0.10), transparent 70%),
-    radial-gradient(ellipse 52% 40% at 30% 75%, rgba(255, 110, 199, 0.07), transparent 70%),
-    radial-gradient(ellipse 46% 34% at 75% 80%, rgba(62, 230, 160, 0.07), transparent 70%),
-    var(--bg);
+    radial-gradient(ellipse 60% 45% at 22% 24%, rgba(255, 160, 46, 0.12), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 80% 68%, rgba(230, 80, 10, 0.10), transparent 70%),
+    radial-gradient(ellipse 70% 30% at 50% 100%, rgba(255, 160, 46, 0.07), transparent 75%),
+    var(--ink);
 }
 
+/* faint amber city-lights field */
 html.no-3d .bg-fallback::before,
 html.no-3d .bg-fallback::after {
   content: '';
@@ -23,30 +23,29 @@ html.no-3d .bg-fallback::after {
   height: 2px;
   border-radius: 50%;
   background: transparent;
-  /* hand-placed starfield */
   box-shadow:
-    12vw 8vh 0 0 rgba(233, 237, 245, 0.7), 28vw 32vh 0 0 rgba(56, 225, 255, 0.8),
-    44vw 12vh 0 1px rgba(233, 237, 245, 0.5), 61vw 41vh 0 0 rgba(167, 139, 250, 0.8),
-    76vw 18vh 0 0 rgba(233, 237, 245, 0.65), 88vw 55vh 0 1px rgba(255, 193, 77, 0.7),
-    8vw 62vh 0 0 rgba(233, 237, 245, 0.5), 22vw 81vh 0 1px rgba(62, 230, 160, 0.7),
-    39vw 67vh 0 0 rgba(233, 237, 245, 0.6), 54vw 88vh 0 0 rgba(255, 110, 199, 0.7),
-    69vw 72vh 0 0 rgba(233, 237, 245, 0.55), 83vw 90vh 0 0 rgba(56, 225, 255, 0.6),
-    93vw 33vh 0 0 rgba(233, 237, 245, 0.5), 4vw 38vh 0 0 rgba(167, 139, 250, 0.55),
-    49vw 26vh 0 1px rgba(233, 237, 245, 0.75), 66vw 6vh 0 0 rgba(62, 230, 160, 0.5);
+    12vw 8vh 0 0 rgba(255, 217, 160, 0.55), 28vw 32vh 0 0 rgba(255, 160, 46, 0.7),
+    44vw 12vh 0 1px rgba(242, 231, 213, 0.4), 61vw 41vh 0 0 rgba(230, 80, 10, 0.6),
+    76vw 18vh 0 0 rgba(255, 217, 160, 0.5), 88vw 55vh 0 1px rgba(255, 160, 46, 0.6),
+    8vw 62vh 0 0 rgba(242, 231, 213, 0.35), 22vw 81vh 0 1px rgba(255, 160, 46, 0.55),
+    39vw 67vh 0 0 rgba(255, 217, 160, 0.45), 54vw 88vh 0 0 rgba(230, 80, 10, 0.55),
+    69vw 72vh 0 0 rgba(242, 231, 213, 0.4), 83vw 90vh 0 0 rgba(255, 160, 46, 0.5),
+    93vw 33vh 0 0 rgba(255, 217, 160, 0.4), 4vw 38vh 0 0 rgba(230, 80, 10, 0.45),
+    49vw 26vh 0 1px rgba(242, 231, 213, 0.55), 66vw 6vh 0 0 rgba(255, 160, 46, 0.4);
 }
 html.no-3d .bg-fallback::after {
   transform: translate(3vw, 5vh) scale(0.8);
   opacity: 0.6;
 }
 
-/* when motion is reduced, the journey becomes a plain stacked read */
-html.static-journey .journey-track { height: auto; }
-html.static-journey .journey-stage {
+/* when motion is reduced, the film becomes a plain stacked read */
+html.static-journey .film-track { height: auto; }
+html.static-journey .film-stage {
   position: static;
   height: auto;
   overflow: visible;
   display: block;
-  padding: clamp(4rem, 10vh, 7rem) var(--space);
+  padding: clamp(4rem, 10vh, 7rem) var(--pad-x);
 }
 html.static-journey .stage-head { position: static; margin-bottom: 3rem; }
 html.static-journey .stage-counter { display: none; }
@@ -57,9 +56,11 @@ html.static-journey .chapter {
   margin: 0 0 4.5rem;
   max-width: 620px;
 }
+html.static-journey .scroll-cue { display: none; }
 
 @media (prefers-reduced-motion: reduce) {
-  .status-dot, .brand-dot, .hero-hint { animation: none; }
+  .brand-dot, .rail-dot, .cue-ring, .cue-ring span, .grain,
+  .order-rail, .scroll-cue { animation: none; }
   .btn:hover { transform: none; }
   html { scroll-behavior: auto; }
 }

@@ -1,31 +1,33 @@
 :root {
-  /* the void */
-  --bg: #06080f;
-  --bg-raise: #0b0f1a;
-  --ink: #e9edf5;
-  --ink-body: #c2c9d8;
-  --ink-dim: #8d96ab;
-  --hairline: rgba(160, 175, 205, 0.14);
+  /* night shift — warm phosphor over sodium-lamp black */
+  --ink: #0d0806;
+  --ink-raise: #171009;
+  --paper: #f2e7d5;
+  --paper-dim: #e6d8c2;
 
-  /* cluster hues — must match src/content/data.ts */
-  --hue-ingress: #38e1ff;
-  --hue-catalogue: #a78bfa;
-  --hue-platform: #ffc14d;
-  --hue-inference: #3ee6a0;
-  --hue-ops: #ff6ec7;
+  --amber: #ffa02e;
+  --ember: #e6500a;
+  --led: #ffd9a0;
+  --dust: #9b8a76;
 
-  --accent: var(--hue-ingress);
+  /* text on dark */
+  --text: #f2e7d5;
+  --text-body: #cfc0aa;
+  --text-dim: #9b8a76;
+  --hairline: rgba(242, 231, 213, 0.16);
+  --hairline-strong: rgba(242, 231, 213, 0.34);
 
-  --font-display: 'Cabinet Grotesk', 'Avenir Next', sans-serif;
-  --font-body: 'Satoshi', 'Helvetica Neue', sans-serif;
-  --font-mono: 'Martian Mono', 'SF Mono', monospace;
+  /* text on paper */
+  --paper-ink: #1a120a;
+  --paper-body: #4a3a2a;
+  --paper-dim-ink: #8a7455;
+  --paper-hairline: rgba(26, 18, 10, 0.22);
 
-  --space: clamp(1.25rem, 4vw, 4rem);
-  --head-h: 64px;
+  --font-display: 'Clash Display', 'Avenir Next Condensed', sans-serif;
+  --font-serif: 'Literata', Georgia, serif;
+  --font-mono: 'DM Mono', 'SF Mono', monospace;
+
+  /* proportional site grid, oryzo-style */
+  --pad-x: 3.125vw;
+  --head-h: 72px;
 }
-
-[data-hue='ingress'] { --hue: var(--hue-ingress); }
-[data-hue='catalogue'] { --hue: var(--hue-catalogue); }
-[data-hue='platform'] { --hue: var(--hue-platform); }
-[data-hue='inference'] { --hue: var(--hue-inference); }
-[data-hue='ops'] { --hue: var(--hue-ops); }

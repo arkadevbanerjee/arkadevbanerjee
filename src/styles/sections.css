@@ -4,119 +4,154 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: calc(var(--head-h) + 2rem) var(--space) 4rem;
+  padding: calc(var(--head-h) + 1rem) var(--pad-x) 5.5rem;
   position: relative;
 }
 
-.hero-id { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 2rem; }
-.status-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--hue-inference);
-  box-shadow: 0 0 12px var(--hue-inference);
-  animation: pulse 2.2s ease-in-out infinite;
-}
-@keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(0.7); opacity: 0.55; } }
-
-.hero-title {
-  font-size: clamp(1.9rem, 8.5vw, 7.5rem);
-  max-width: 14ch;
-}
-.hero-title .line { display: block; overflow: hidden; }
-.outline {
-  font-style: normal;
-  color: transparent;
-  -webkit-text-stroke: 2px var(--accent);
+.hero-kicker {
+  color: var(--led);
+  margin-bottom: 1rem;
 }
 
-.hero-sub {
-  max-width: 46ch;
-  margin-top: 2.2rem;
-  font-size: clamp(1rem, 1vw + 0.8rem, 1.25rem);
-  color: var(--ink-body);
+.hero-wordmark {
+  font-size: clamp(3.4rem, 16.5vw, 15rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 0.88;
+  color: var(--paper);
+  text-shadow: 0 0 90px rgba(255, 160, 46, 0.28);
+}
+
+.hero-thesis {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.15rem, 2.2vw, 1.9rem);
+  color: var(--text-body);
+  max-width: 34ch;
+  margin-top: 2rem;
+  line-height: 1.45;
+}
+.hero-thesis em {
+  color: var(--amber);
+}
+
+/* glass id-card, oryzo bottom-left style */
+.hero-card {
+  position: absolute;
+  bottom: 5.5rem;
+  right: var(--pad-x);
+  width: min(310px, 78vw);
+  padding: 1.4rem 1.5rem;
+  background: rgba(23, 16, 9, 0.55);
+  border: 1px solid var(--hairline);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.hero-card .micro { color: var(--led); }
+.hero-card hr {
+  border: 0;
+  border-top: 1px dashed var(--hairline-strong);
+  margin: 1rem 0;
+}
+.hero-card p:last-child {
+  font-size: 0.95rem;
+  color: var(--text-body);
 }
 
 .hero-stats {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.25rem 2.5rem;
+  gap: 1.1rem 2.4rem;
   margin-top: 3rem;
 }
-.hero-stats b { color: var(--ink-dim); font-weight: 600; margin-right: 0.5em; }
-.hero-stats span { border-left: 1px solid var(--hairline); padding-left: 0.9rem; color: var(--ink); }
-
-.hero-hint {
-  position: absolute;
-  bottom: 2rem;
-  left: var(--space);
-  animation: drift 2.6s ease-in-out infinite;
+.hero-stats b { color: var(--text-dim); font-weight: 500; margin-right: 0.5em; }
+.hero-stats span {
+  border-left: 1px dashed var(--hairline-strong);
+  padding-left: 0.9rem;
+  color: var(--text);
 }
-@keyframes drift { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
 
-/* ============ JOURNEY ============ */
-.journey-track { height: 560vh; position: relative; }
+@media (max-width: 900px) {
+  .hero-card { position: static; margin-top: 2.5rem; width: min(420px, 100%); }
+  .hero-stats { margin-top: 2rem; }
+}
 
-.journey-stage {
+/* ============ FILM (pinned journey) ============ */
+.film-track { height: 620vh; position: relative; }
+
+.film-stage {
   position: sticky;
   top: 0;
   height: 100dvh;
   overflow: hidden;
   display: grid;
   place-items: center;
-  padding: 0 var(--space);
+  padding: 0 var(--pad-x);
 }
 
 .stage-head {
   position: absolute;
-  top: calc(var(--head-h) + 1rem);
-  left: var(--space);
-  right: var(--space);
+  top: calc(var(--head-h) + 0.8rem);
+  left: var(--pad-x);
+  right: var(--pad-x);
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
 }
+.stage-counter { color: var(--led); }
 
 .chapter {
   grid-area: 1 / 1;
-  max-width: 560px;
+  max-width: 520px;
   width: 100%;
   opacity: 0;
   visibility: hidden;
   position: relative;
+  padding: 2rem 2.2rem;
+  border: 1px dashed var(--hairline-strong);
+  background: rgba(13, 8, 6, 0.52);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
-/* soft scrim keeps chapter text legible over bright clusters */
-.chapter::before {
+/* registration marks on the inspector frame */
+.chapter::before,
+.chapter::after {
   content: '';
   position: absolute;
-  inset: -3rem -4rem;
-  z-index: -1;
-  background: radial-gradient(ellipse 70% 60% at 40% 50%, rgba(6, 8, 15, 0.82), transparent 78%);
-  pointer-events: none;
+  width: 7px;
+  height: 7px;
+  background: var(--amber);
 }
+.chapter::before { top: -4px; left: -4px; }
+.chapter::after { bottom: -4px; right: -4px; }
 .chapter:first-child { opacity: 1; visibility: visible; }
 
-.ch-label { color: var(--hue); margin-bottom: 1.1rem; }
-.ch-title { font-size: clamp(2.2rem, 6vw, 4.4rem); margin-bottom: 1.4rem; }
-.ch-body { color: var(--ink-body); max-width: 52ch; }
-.ch-stack { margin-top: 1.6rem; color: var(--ink); }
+.ch-label { color: var(--amber); margin-bottom: 1.1rem; }
+.ch-title {
+  font-size: clamp(2.1rem, 5.2vw, 3.9rem);
+  margin-bottom: 1.3rem;
+}
+.ch-body { color: var(--text-body); max-width: 52ch; }
+.ch-stack { margin-top: 1.5rem; color: var(--led); }
 .ch-stack::before {
   content: '';
   display: inline-block;
   width: 2rem;
   height: 1px;
-  background: var(--hue);
+  border-top: 1px dashed var(--amber);
   vertical-align: middle;
   margin-right: 0.8rem;
 }
 
-/* desktop: text sits left of centre so the cluster shows right */
+/* desktop: inspector card sits left so the set-piece shows right */
 @media (min-width: 1024px) {
-  .journey-stage { place-items: center start; }
-  .chapter { margin-left: 4vw; }
+  .film-stage { place-items: center start; }
+  .chapter { margin-left: 2vw; }
 }
 
 /* ============ SECTIONS (shared) ============ */
-.section { position: relative; padding: clamp(6rem, 14vh, 11rem) var(--space); }
+.section { position: relative; padding: clamp(6rem, 14vh, 11rem) var(--pad-x); }
 
 .section-head { margin-bottom: clamp(2.5rem, 6vh, 4.5rem); }
 .kicker { margin-bottom: 1.2rem; }
@@ -125,114 +160,168 @@
   display: inline-block;
   width: 4rem;
   height: 1px;
-  background: var(--hairline);
+  border-top: 1px dashed currentColor;
+  opacity: 0.5;
   vertical-align: middle;
   margin-left: 1rem;
 }
-.section-title { font-size: clamp(2.2rem, 5.5vw, 4.5rem); max-width: 18ch; }
-.accent { color: var(--accent); }
-.section-sub { margin-top: 1.2rem; color: var(--ink-dim); max-width: 52ch; }
+.section-title { font-size: clamp(2.2rem, 5.5vw, 4.5rem); max-width: 20ch; }
+.accent { color: var(--ember); }
+.section-sub { margin-top: 1.2rem; max-width: 54ch; }
 
-/* ============ REGISTRY ============ */
+/* ============ PAPER INTERLUDE ============ */
+.paper-zone {
+  position: relative;
+  z-index: 2;
+  background: var(--paper);
+  color: var(--paper-body);
+  box-shadow: 0 -40px 120px rgba(5, 2, 1, 0.8);
+}
+.paper-zone h2, .paper-zone h3 { color: var(--paper-ink); }
+.paper-zone .micro { color: var(--paper-dim-ink); }
+.paper-zone b { color: var(--paper-ink); }
+.paper-zone .accent { color: var(--ember); }
+.paper-zone ::selection { background: var(--paper-ink); color: var(--paper); }
+
+/* torn-edge dashed seam where film meets paper */
+.paper-zone::before,
+.paper-zone::after {
+  content: '';
+  position: absolute;
+  left: var(--pad-x);
+  right: var(--pad-x);
+  border-top: 1px dashed var(--paper-hairline);
+}
+.paper-zone::before { top: 0; }
+.paper-zone::after { bottom: 0; }
+
+/* ---- shipped cards ---- */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(310px, 100%), 1fr));
-  gap: 1px;
-  background: var(--hairline);
-  border: 1px solid var(--hairline);
+  gap: clamp(1rem, 1.6vw, 1.6rem);
 }
 
 .card {
-  background: var(--bg);
-  padding: 1.8rem 1.6rem 1.6rem;
+  padding: 1.7rem 1.6rem 1.5rem;
   position: relative;
-  transition: background 0.3s;
+  border: 1px dashed var(--paper-hairline);
+  background: transparent;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  transition: background 0.3s, border-color 0.3s;
 }
 .card::before {
   content: '';
   position: absolute;
   inset: 0 auto 0 0;
-  width: 2px;
-  background: var(--hue);
+  width: 3px;
+  background: var(--ember);
   transform: scaleY(0);
   transform-origin: top;
   transition: transform 0.35s ease;
 }
-.card:hover { background: var(--bg-raise); }
+.card:hover { background: rgba(230, 80, 10, 0.05); border-color: var(--ember); }
 .card:hover::before { transform: scaleY(1); }
 
 .card-top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
-.svc-name { font-family: var(--font-mono); color: var(--ink); font-weight: 600; letter-spacing: 0.04em; text-transform: none; }
-.svc-status { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.58rem; }
+.svc-name {
+  font-family: var(--font-mono);
+  color: var(--paper-ink);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+.svc-status { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.58rem; color: var(--ember); }
 .svc-status i {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--hue);
-  box-shadow: 0 0 8px var(--hue);
+  background: var(--ember);
 }
 .card-body { font-size: 0.98rem; flex: 1; }
-.card-stack { color: var(--ink-dim); }
+.card-stack { color: var(--paper-dim-ink); }
 
 .archive { margin-top: clamp(3rem, 7vh, 5rem); }
-.archive-list { margin-top: 1.4rem; border-top: 1px solid var(--hairline); }
+.archive-list { margin-top: 1.4rem; border-top: 1px dashed var(--paper-hairline); }
 .archive-list li {
   display: grid;
   grid-template-columns: minmax(150px, 220px) 1fr;
   gap: 1.5rem;
   padding: 1.1rem 0;
-  border-bottom: 1px solid var(--hairline);
+  border-bottom: 1px dashed var(--paper-hairline);
   align-items: baseline;
 }
 .archive-list .svc-name { font-size: 0.78rem; }
-.arch-desc { color: var(--ink-dim); font-size: 0.95rem; }
+.arch-desc { font-size: 0.95rem; }
 @media (max-width: 640px) {
   .archive-list li { grid-template-columns: 1fr; gap: 0.3rem; }
 }
 
-/* ============ MANIFEST ============ */
+/* ---- manifest (skills) ---- */
 .manifest-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
   gap: 2.5rem 3rem;
 }
-.manifest-group dt { display: flex; align-items: center; gap: 0.7rem; color: var(--hue); }
+.manifest-group dt { display: flex; align-items: center; gap: 0.7rem; color: var(--ember); }
 .node-dot {
-  width: 9px;
-  height: 9px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: var(--hue);
-  box-shadow: 0 0 10px var(--hue);
+  background: var(--ember);
 }
 .manifest-group dd {
   margin-top: 0.9rem;
   padding-top: 0.9rem;
-  border-top: 1px solid var(--hairline);
-  color: var(--ink);
+  border-top: 1px dashed var(--paper-hairline);
+  color: var(--paper-ink);
   font-size: 1.05rem;
   line-height: 1.8;
 }
 
-/* ============ ABOUT ============ */
-.about-cols { max-width: 62ch; display: grid; gap: 1.5rem; font-size: clamp(1.05rem, 1vw + 0.85rem, 1.3rem); }
-.about-edu { margin-top: 1rem; color: var(--ink); }
+/* ---- about ---- */
+.about-cols {
+  max-width: 62ch;
+  display: grid;
+  gap: 1.5rem;
+  font-size: clamp(1.05rem, 1vw + 0.85rem, 1.3rem);
+}
+.about-edu { margin-top: 1rem; color: var(--paper-ink); }
 
-/* ============ CONTACT ============ */
-.contact { min-height: 88dvh; display: flex; flex-direction: column; justify-content: center; }
-.contact-title { max-width: none; }
+/* ============ DELIVERED (contact) ============ */
+.delivered {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.delivered-word {
+  font-size: clamp(3rem, 13vw, 12rem);
+  font-weight: 700;
+  color: var(--paper);
+  line-height: 0.9;
+  text-shadow: 0 0 80px rgba(255, 160, 46, 0.25);
+}
+.delivered-sub {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+  color: var(--text-body);
+  margin-top: 1.6rem;
+  max-width: 40ch;
+}
 .contact-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: 3rem;
 }
 .site-foot {
   margin-top: clamp(4rem, 12vh, 8rem);
   padding-top: 1.5rem;
-  border-top: 1px solid var(--hairline);
+  border-top: 1px dashed var(--hairline);
   display: flex;
   justify-content: space-between;
   gap: 1rem;

@@ -1,75 +1,60 @@
-// Scene configuration — the constellation IS the career story.
-// Hues must match the CSS custom properties in styles/tokens.css.
+// Film configuration — one order travelling through the machine.
+// Each hop is a career chapter AND a 3D set-piece along the -Z axis.
 
-export interface ClusterDef {
+export interface HopDef {
   key: 'ingress' | 'catalogue' | 'platform' | 'inference' | 'ops'
-  color: number
-  center: [number, number, number]
-  radius: number
-  count: number
-  services: string[]
+  /** giant depth-composited word rendered inside the 3D scene */
+  word: string
+  /** waybill status shown on the order rail */
+  status: string
+  /** set-piece center on the z axis */
+  z: number
 }
 
-export const CLUSTERS: ClusterDef[] = [
-  {
-    key: 'ingress',
-    color: 0x38e1ff,
-    center: [-13, 2.5, -4],
-    radius: 5,
-    count: 18,
-    services: ['pricing-scraper', 'benchmark-etl', 'market-watch', 'price-engine', 'crawler-fleet'],
-  },
-  {
-    key: 'catalogue',
-    color: 0xa78bfa,
-    center: [11, -2, -20],
-    radius: 6,
-    count: 26,
-    services: ['product-store', 'sku-api', 'search-indexer', 'media-cdn', 'attr-schema', 'seller-gw'],
-  },
-  {
-    key: 'platform',
-    color: 0xffc14d,
-    center: [-7, -4, -36],
-    radius: 7,
-    count: 32,
-    services: ['order-service', 'payment-gw', 'cart-api', 'kafka-bus', 'notif-hub', 'idempotency-store', 'rate-limiter'],
-  },
-  {
-    key: 'inference',
-    color: 0x3ee6a0,
-    center: [12, 4.5, -52],
-    radius: 5.5,
-    count: 22,
-    services: ['recsys-train', 'feature-store', 'embed-cache', 'rank-api', 'ab-splitter'],
-  },
-  {
-    key: 'ops',
-    color: 0xff6ec7,
-    center: [-10, 2, -68],
-    radius: 6,
-    count: 26,
-    services: ['capacity-engine', 'atomic-caps', 'route-planner', 'slot-allocator', 'wms-sync', 'fleet-tracker'],
-  },
+export const HOPS: HopDef[] = [
+  { key: 'ingress',   word: 'INGRESS',   status: 'RECEIVED',         z: -34 },
+  { key: 'catalogue', word: 'CATALOGUE', status: 'CATALOGUED',       z: -68 },
+  { key: 'platform',  word: 'THROUGHPUT', status: 'PROCESSED',       z: -102 },
+  { key: 'inference', word: 'INFERENCE', status: 'RANKED',           z: -136 },
+  { key: 'ops',       word: 'CAPACITY',  status: 'OUT FOR DELIVERY', z: -170 },
 ]
 
-// Camera flythrough keyframes: index 0 = hero overview, then one per chapter.
-// each chapter camera sits ~16-19 units from its cluster so the
-// constellation frames the text instead of engulfing it
+/** z position of the hero conveyor set-piece */
+export const HERO_Z = 0
+/** z position of the night-city finale */
+export const CITY_Z = -210
+
+export const WAYBILL_START = 'ORDER PLACED'
+export const WAYBILL_END = 'DELIVERED'
+
+// Camera keyframes for the film: hero, then one per hop.
+// Kept slightly off-axis so set-pieces frame the DOM copy (left third clear).
 export const CAMERA_KEYS: [number, number, number][] = [
-  [0, 3, 17],
-  [-5, 5, 10],
-  [2, 1, -4],
-  [3, 0, -20],
-  [2, 8, -37],
-  [0, 5, -52],
+  [0.0, 2.6, 9.5],      // hero — low over the conveyor
+  [-2.6, 2.2, -25],     // ingress — packet frames right of the chapter card
+  [-3.4, 1.6, -59],     // catalogue — inside the aisle
+  [3.6, 2.4, -93],      // platform — alongside the lanes
+  [-3.2, 2.2, -127],    // inference
+  [0.0, 10.0, -158],    // ops — rising above the network
 ]
 
 export const TARGET_KEYS: [number, number, number][] = [
-  [0, 0, -28],
-  [-13, 2.5, -4],
-  [11, -2, -20],
-  [-7, -4, -36],
-  [12, 4.5, -52],
-  [-10, 2, -68],
+  [0, 1.2, 0],
+  [-3.6, 1.2, -34.5],
+  [-0.8, 1.4, -68],
+  [1.0, 1.2, -102],
+  [-0.8, 1.6, -136],
+  [0, 1.0, -170],
+]
+
+// Finale: descend over the night city toward one doorstep.
+export const FINALE_CAM: [number, number, number][] = [
+  [0, 10.0, -158],
+  [0, 26, -186],
+  [0.5, 7, -202],
+]
+export const FINALE_TARGET: [number, number, number][] = [
+  [0, 1.0, -170],
+  [0, 0, -210],
+  [0.5, 0.4, -211],
 ]

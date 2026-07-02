@@ -5,24 +5,26 @@ import { SplitText } from 'gsap/SplitText'
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
 export function initKinetic() {
-  // hero headline: chars rise out of masked lines
-  const heroSplit = new SplitText('.hero-title .line', { type: 'chars' })
+  // hero wordmark: chars rise out of a masked line
+  const heroSplit = new SplitText('.hero-wordmark', { type: 'chars' })
+  gsap.set('.hero-wordmark', { overflow: 'hidden' })
   gsap.from(heroSplit.chars, {
     yPercent: 115,
-    stagger: 0.018,
-    duration: 1.15,
+    stagger: 0.035,
+    duration: 1.2,
     ease: 'expo.out',
-    delay: 0.15,
-    // restore natural text flow so lines re-wrap correctly on resize
+    delay: 0.2,
     onComplete: () => heroSplit.revert(),
   })
-  gsap.from('.hero-id, .hero-sub, .hero-stats, .hero-hint', {
+  // NOTE: .order-rail / .scroll-cue are fixed chrome with their own CSS
+  // entrance — animating them here collides with their CSS opacity transition
+  gsap.from('.hero-kicker, .hero-thesis, .hero-stats, .hero-card', {
     autoAlpha: 0,
     y: 26,
     duration: 0.9,
     ease: 'power3.out',
-    stagger: 0.12,
-    delay: 0.55,
+    stagger: 0.1,
+    delay: 0.7,
   })
 
   // section titles: word-level rise on entry
@@ -38,8 +40,22 @@ export function initKinetic() {
     })
   })
 
+  // the DELIVERED stamp slams in
+  const delivered = document.querySelector<HTMLElement>('.delivered-word')
+  if (delivered) {
+    gsap.from(delivered, {
+      scale: 1.6,
+      autoAlpha: 0,
+      duration: 0.55,
+      ease: 'power4.in',
+      scrollTrigger: { trigger: delivered, start: 'top 75%' },
+    })
+  }
+
   // cards, manifest groups and archive rows stagger in
-  const items = gsap.utils.toArray<HTMLElement>('.card, .manifest-group, .archive-list li, .about-cols p')
+  const items = gsap.utils.toArray<HTMLElement>(
+    '.card, .manifest-group, .archive-list li, .about-cols p',
+  )
   gsap.set(items, { autoAlpha: 0, y: 34 })
   ScrollTrigger.batch(items, {
     start: 'top 92%',
@@ -49,7 +65,7 @@ export function initKinetic() {
   })
 
   // contact block
-  gsap.from('.contact-actions .btn', {
+  gsap.from('.contact-actions .btn, .delivered-sub', {
     autoAlpha: 0,
     y: 24,
     stagger: 0.08,
