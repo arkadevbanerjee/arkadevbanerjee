@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  // Custom domain: served at https://orcodev.is-a.dev/
+  // Custom domain: served at https://arkadevbanerjee.is-a.dev/
   base: '/',
   build: {
     target: 'es2022',
