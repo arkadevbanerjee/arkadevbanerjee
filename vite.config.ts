@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  // Project page: served at https://arkadevbanerjee.github.io/arkadevbanerjee/
-  base: '/arkadevbanerjee/',
+  // Custom domain: served at https://orcodev.is-a.dev/
+  base: '/',
   build: {
     target: 'es2022',
     chunkSizeWarningLimit: 1200,
