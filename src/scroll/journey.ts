@@ -90,6 +90,17 @@ export function initJourney() {
     })
   }
 
+  // header flips too, but only once the paper edge actually reaches it
+  const head = document.querySelector('.site-head')
+  if (head) {
+    ScrollTrigger.create({
+      trigger: '.paper-zone',
+      start: 'top 7%',
+      end: 'bottom 7%',
+      onToggle: (self) => head.classList.toggle('on-paper', self.isActive),
+    })
+  }
+
   // finale: descend over the city, mark the order delivered
   ScrollTrigger.create({
     trigger: '#contact',

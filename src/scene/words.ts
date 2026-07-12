@@ -71,6 +71,11 @@ export function buildWords() {
 
   return {
     group,
+    // word widths are tuned for landscape framing; shrink them on narrow
+    // viewports so they read as words instead of filling the frame clipped
+    setScale(f: number) {
+      group.children.forEach((mesh) => mesh.scale.setScalar(f))
+    },
     update(film: number) {
       // hop i is fully framed at film = (i+1)/5 — fade the word in around it
       for (let i = 0; i < mats.length; i++) {

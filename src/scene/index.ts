@@ -56,6 +56,8 @@ export async function initScene(canvas: HTMLCanvasElement) {
 
   const words = buildWords()
   scene.add(words.group)
+  const wordScale = () => Math.min(1, innerWidth / innerHeight / 0.9)
+  words.setScale(wordScale())
 
   const rig = createRig()
 
@@ -101,6 +103,7 @@ export async function initScene(canvas: HTMLCanvasElement) {
     camera.updateProjectionMatrix()
     renderer.setSize(innerWidth, innerHeight)
     composer.setSize(innerWidth, innerHeight)
+    words.setScale(wordScale())
   })
 
   gsap.to(canvas, { opacity: 1, duration: 1.8, ease: 'power2.out', delay: 0.2 })

@@ -105,6 +105,18 @@ html.no-3d #scene { display: none; }
   background: linear-gradient(rgba(13, 8, 6, 0.7), rgba(13, 8, 6, 0));
 }
 
+/* header inverts over the paper interlude (toggled in journey.ts) */
+.site-head.on-paper {
+  background: linear-gradient(rgba(242, 231, 213, 0.94), rgba(242, 231, 213, 0));
+}
+.site-head.on-paper .brand { color: var(--paper-ink); }
+.site-head.on-paper .brand-dot { color: var(--ember); }
+.site-head.on-paper .site-nav a { color: var(--paper-dim-ink); }
+.site-head.on-paper .site-nav a:hover { color: var(--ember); border-bottom-color: var(--ember); }
+.site-head.on-paper .btn-ghost { color: var(--paper-body); border-color: var(--paper-hairline); }
+.site-head.on-paper .btn-ghost:hover { color: var(--ember); border-color: var(--ember); }
+.site-head.on-paper .scroll-progress { background: rgba(26, 18, 10, 0.12); }
+
 .brand {
   font-family: var(--font-display);
   font-weight: 700;

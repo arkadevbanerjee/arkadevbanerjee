@@ -150,6 +150,14 @@
   .chapter { margin-left: 2vw; }
 }
 
+/* mobile: card spans the full frame with bright geometry behind it —
+   stronger scrim keeps the copy legible; counter must not wrap */
+@media (max-width: 768px) {
+  .chapter { padding: 1.7rem 1.3rem; background: rgba(13, 8, 6, 0.74); }
+  .stage-counter { white-space: nowrap; flex: none; }
+  .stage-head .kicker::after { display: none; }
+}
+
 /* ============ SECTIONS (shared) ============ */
 .section { position: relative; padding: clamp(6rem, 14vh, 11rem) var(--pad-x); }
 
