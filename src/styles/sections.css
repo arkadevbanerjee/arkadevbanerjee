@@ -304,6 +304,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* the DELIVERED stamp waits at scale(1.6) until its slam-in trigger —
+     clip here so the scaled word never widens the page on portrait */
+  overflow-x: clip;
 }
 .delivered-word {
   font-size: clamp(3rem, 13vw, 12rem);

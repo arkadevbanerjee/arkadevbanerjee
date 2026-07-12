@@ -2,7 +2,9 @@
 *::before,
 *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+/* overflow-x on html, not just body: mobile Chrome derives min zoom-out scale
+   from document overflow, which body-level clip does not prevent */
+html { scroll-behavior: smooth; overflow-x: clip; }
 html.lenis { scroll-behavior: auto; }
 
 body {
